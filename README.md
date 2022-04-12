@@ -1,9 +1,9 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Raul
-- Tiago
-- Maria Karolina
+- Raul Vinícius Rita
+- Tiago Hennig
+- Maria Karolina Teixeira de Freitas
 
 Link do Surge: www.link.com.br
 
