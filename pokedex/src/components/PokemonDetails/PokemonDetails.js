@@ -8,4 +8,4 @@ const PokemonDetails = () => {
     )
 }
 
-export default PokemonDetails
+export default PokemonDetails;
