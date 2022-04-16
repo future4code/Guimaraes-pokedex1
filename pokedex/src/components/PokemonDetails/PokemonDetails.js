@@ -1,11 +1,42 @@
 import React from "react";
+import {useNavigate} from 'react-router-dom'
+import PokemonDetails from '../PokemonDetails'
+
+
+
 
 const PokemonDetails = () => {
+     const navigate= useNavigate ()
+ 
+ 
+ const goToPageHome= () => {
+  navigate ('/')
+ }
+
+ const goToPagePokemon =() => {
+  navigate ('/pokedex')
+  
+ }
+ 
     return(
-        <div>
+      <div>
+        <headerDetails>
             <p>PokemonDetails</p>
-        </div>
+
+              <buttonDetails>
+                <button onClick={goToPagePokemon}>Voltar</button>
+                <button onClick={goToPageHome}>Home</button>
+                <button>Adicionar</button>
+                <button>Remover</button>
+            </buttonDetails>  
+
+        </headerDetails> 
+
+     </div>
+
+
     )
+    
 }
 
 export default PokemonDetails;
