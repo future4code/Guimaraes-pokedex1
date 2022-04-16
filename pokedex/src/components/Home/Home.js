@@ -7,38 +7,28 @@ import PokemonCard from "../PokemonCard/PokemonCard";
 
 const Home = () => {
 
+
+
     const navigate = useNavigate()
 
     const [pokemons, setPokemons] = useState([])
-    const [pokemonNames, setPokemonNames] = useState([])
-    const pokemonList = [];
-    
-    {useEffect(() => {
-        getPokemonNames();
-      }, []);}
-
+    let pokemonsList = []
     useEffect(() => {
-        
-        pokemonNames.forEach((item) => {
-          axios.get(`https://pokeapi.co/api/v2/pokemon/${item.name}`)
-            .then((response) => {
-              pokemonList.push(response.data);
-              setPokemons(pokemonList)
-              console.log(pokemonList)
 
-            })
-            .catch((error) => console(error));
-        });
-      }, [pokemonNames]);
-    
-      const getPokemonNames = () => {
-        axios.get(`https://pokeapi.co/api/v2/pokemon?limit=8`)
-          .then((response) => {
-            setPokemonNames(response.data.results);
-          })
-          .catch((error) => alert(error));
-      };
-    
+        const getPokemons = async () => {
+            const response = await axios.get("https://pokeapi.co/api/v2/pokemon/");
+            for (const pokemon of response.data.results) {
+                const response = await axios.get(pokemon.url)
+
+                pokemonsList.push(response.data)
+            }
+
+            setPokemons(pokemonsList)
+        }
+        getPokemons()
+        console.log(pokemonsList)
+    }, [])
+
     
     return(
 
