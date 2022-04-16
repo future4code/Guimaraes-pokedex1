@@ -7,13 +7,15 @@ import PokemonCard from "../PokemonCard/PokemonCard";
 
 const Home = () => {
 
+
+
     const navigate = useNavigate()
 
     const [pokemons, setPokemons] = useState([])
     let pokemonsList = []
     useEffect(() => {
 
-        const buscarPokemons = async () => {
+        const getPokemons = async () => {
             const response = await axios.get("https://pokeapi.co/api/v2/pokemon/");
             for (const pokemon of response.data.results) {
                 const response = await axios.get(pokemon.url)
@@ -23,7 +25,8 @@ const Home = () => {
 
             setPokemons(pokemonsList)
         }
-        buscarPokemons()
+        getPokemons()
+        console.log(pokemonsList)
     }, [])
 
     
