@@ -6,17 +6,19 @@ import { goToPokemonDetails } from '../../routes/coordinator';
 
 const PokemonCard = (props) => {
 
-    const [pokemons, setPokemons] = useState([])
+
+    let pokemons = []
 
     const navigate = useNavigate();
 
     const addToPokedex = () => {
-        const newPokemons = [...pokemons]
+        const newPokemons = [...pokemons,]
         newPokemons.push(props.poke)
-        setPokemons(newPokemons)
+        pokemons.push(newPokemons)
         console.log(pokemons)
         console.log(newPokemons)
     }
+    console.log(pokemons)
 
     return (
         <div>
@@ -28,7 +30,6 @@ const PokemonCard = (props) => {
             </div>
             </PokemonsContext.Provider>
         </div>
-
     )
 }
 
