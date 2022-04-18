@@ -3,11 +3,10 @@ import React, { useEffect, useState } from "react";
 import {useNavigate} from "react-router-dom"
 import { goToPokedex } from "../../routes/coordinator";
 import PokemonCard from "../PokemonCard/PokemonCard";
+import { ContainerHome, HeaderHome } from "./styles";
 
 
 const Home = () => {
-
-
 
     const navigate = useNavigate()
 
@@ -32,11 +31,12 @@ const Home = () => {
     
     return(
 
-        <div>
-            <header>
+        <ContainerHome>
+            <HeaderHome>
                 <button onClick={() => goToPokedex(navigate)}>Ver Pokedex</button>
                 <h1>Lista de Pokémons</h1>
-            </header>
+            </HeaderHome>
+
             <div>
                 {pokemons && pokemons.map((poke) => {
                     return (
@@ -45,7 +45,7 @@ const Home = () => {
                 })}
                 
             </div>
-        </div>
+        </ContainerHome>
     )
 }
 

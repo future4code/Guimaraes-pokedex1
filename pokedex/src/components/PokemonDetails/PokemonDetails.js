@@ -1,9 +1,5 @@
 import React from "react";
 import {useNavigate} from 'react-router-dom'
-import PokemonDetails from '../PokemonDetails'
-
-
-
 
 const PokemonDetails = () => {
      const navigate= useNavigate ()

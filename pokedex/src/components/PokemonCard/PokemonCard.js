@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { PokemonsContext } from '../../global/GlobalStateContext';
 import { goToPokemonDetails } from '../../routes/coordinator';
+import { ContainerButtons, ContainerCard, ImageCard } from './styles';
 
 
 const PokemonCard = (props) => {
@@ -19,15 +20,15 @@ const PokemonCard = (props) => {
     }
 
     return (
-        <div>
+        <ContainerCard>
             <PokemonsContext.Provider value={pokemons}>
-            <img src={props.poke?.sprites.front_default}/>
-            <div>
+            <ImageCard src={props.poke?.sprites.front_default}/>
+            <ContainerButtons>
                 <button onClick={() => goToPokemonDetails(navigate)}>Ver Detalhes</button>
                 <button onClick={addToPokedex}>Adicionar a Pokedex</button>
-            </div>
+            </ContainerButtons>
             </PokemonsContext.Provider>
-        </div>
+        </ContainerCard>
 
     )
 }
