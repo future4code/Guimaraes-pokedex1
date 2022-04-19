@@ -1,32 +1,31 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {useNavigate} from "react-router-dom"
 import { goToPokedex } from "../../routes/coordinator";
 import PokemonCard from "../PokemonCard/PokemonCard";
 import { ContainerHome, HeaderHome } from "./styles";
+import { GlobalStateContext } from "../../global/GlobalStateContext";
 
 
 const Home = () => {
 
+    const {states, functions} = useContext(GlobalStateContext)
+
+    const {pokemons} = states
+
+    const {addPokemonToPokedex} = functions
+
     const navigate = useNavigate()
 
-    const [pokemons, setPokemons] = useState([])
-    let pokemonsList = []
-    useEffect(() => {
 
-        const getPokemons = async () => {
-            const response = await axios.get("https://pokeapi.co/api/v2/pokemon/");
-            for (const pokemon of response.data.results) {
-                const response = await axios.get(pokemon.url)
+    // const [pokemonsAdded, setPokemonsAdded] = useState([])
 
-                pokemonsList.push(response.data)
-            }
-
-            setPokemons(pokemonsList)
-        }
-        getPokemons()
-        console.log(pokemonsList)
-    }, [])
+    // const addPokemonToPokedex = (item) => {
+    //     const newPokemonsAdded = [...pokemonsAdded]
+    //     newPokemonsAdded.push(item)
+    //     setPokemonsAdded(newPokemonsAdded)
+    //     console.log(newPokemonsAdded)
+    // }
 
     
     return(
@@ -40,7 +39,7 @@ const Home = () => {
             <div>
                 {pokemons && pokemons.map((poke) => {
                     return (
-                        <PokemonCard key={poke.name} poke={poke}  />
+                        <PokemonCard key={poke.name} poke={poke} addPokemonToPokedex={addPokemonToPokedex} />
                     )
                 })}
                 

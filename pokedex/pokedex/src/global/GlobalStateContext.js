@@ -1,5 +1,3 @@
-import { createContext } from "react"
+import React from 'react'
 
-export const PokemonsContext = createContext()
-
-export const PokemonsDetailsContext = createContext()
+export const GlobalStateContext = React.createContext()
