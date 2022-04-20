@@ -11,13 +11,11 @@ const PokemonCard = (props) => {
 
     return (
         <ContainerCard>
-            {/* <PokemonsContext.Provider value={pokemons}> */}
-            <ImageCard src={props.poke?.sprites.front_default}/>
+            <ImageCard src={props.poke.sprites.front_default}/>
             <ContainerButtons>
                 <button onClick={() => goToPokemonDetails(navigate)}>Ver Detalhes</button>
                 <button onClick={() => props.addPokemonToPokedex(props.poke)}>Adicionar a Pokedex</button>
             </ContainerButtons>
-            {/* </PokemonsContext.Provider> */}
         </ContainerCard>
 
     )

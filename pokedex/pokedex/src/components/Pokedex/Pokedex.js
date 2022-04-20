@@ -13,6 +13,16 @@ const Pokedex = () => {
 
     const {pokemonsAdded} = useContext(GlobalStateContext)
 
+    console.log(pokemonsAdded)
+
+    const renderedPokemons = pokemonsAdded && pokemonsAdded.map((poke) => {
+
+        console.log(poke.name)
+
+        return(
+          <p>{poke.name}</p>
+            
+        )})
 
     return(
         <ContainerPokedex>
@@ -21,13 +31,14 @@ const Pokedex = () => {
                 <h1>POKEDEX</h1>
             </HeaderPokedex>
 
-            <div>
-                {pokemonsAdded && pokemonsAdded.map((poke) => {
+            {/* <div> */}
+                {renderedPokemons}
+                {/* {pokemonsAdded && pokemonsAdded.map((poke) => {
                 return(
                     <PokemonCard key={poke.name} poke={poke} />
 
-                )})}
-            </div>
+                )})} */}
+            {/* </div> */}
             
         </ContainerPokedex>
     )
