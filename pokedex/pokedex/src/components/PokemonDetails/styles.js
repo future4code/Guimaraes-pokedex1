@@ -3,11 +3,11 @@ import react from 'react'
 
 
 
-export const headerDetails =styled.div`
+export const HeaderDetails =styled.div`
  display: flex;
  background-color:pink;
 `
- const buttonDetails =styled.div `
+export const ButtonDetails =styled.div `
  
  
  

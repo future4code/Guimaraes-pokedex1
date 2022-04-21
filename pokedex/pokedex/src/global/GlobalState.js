@@ -2,11 +2,16 @@ import React, { useEffect, useState } from "react";
 import { GlobalStateContext } from "./GlobalStateContext";
 import axios from 'axios'
 import { BASE_URL } from "../constants/urls";
+import { useNavigate } from 'react-router-dom'
+import { goToPokemonDetails } from "../routes/coordinator";
 
 const GlobalState = (props) => {
 
+    // const navigate = useNavigate()
+
     const [pokemonsAdded, setPokemonsAdded] = useState([])
     const [pokemons, setPokemons] = useState([])
+    const [details, setDetails] = useState([])
     let pokemonsList = []
 
     useEffect(() => {
@@ -33,7 +38,9 @@ const GlobalState = (props) => {
         console.log(pokemonsAdded)
     }
 
-    const data = {pokemons, pokemonsAdded, addPokemonToPokedex}
+
+
+    const data = {pokemons, pokemonsAdded, addPokemonToPokedex, details}
 
     return (
         <GlobalStateContext.Provider value={data}>
