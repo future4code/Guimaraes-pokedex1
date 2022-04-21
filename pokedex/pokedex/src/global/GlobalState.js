@@ -37,12 +37,12 @@ const GlobalState = (props) => {
 
     // console.log(pokemonsAdded)
 
-    const data = {pokemons, pokemonsAdded}
+    const data = {pokemons, pokemonsAdded, addPokemonToPokedex}
     // const functions = {addPokemonToPokedex}
 
 
     return (
-        <GlobalStateContext.Provider value={data}>
+        <GlobalStateContext.Provider value={{data}}>
             {props.children}
         </GlobalStateContext.Provider>
     )
