@@ -8,8 +8,8 @@ import { GlobalStateContext } from "../../global/GlobalStateContext";
 
 const Home = () => {
 
-    const {pokemons} = useContext(GlobalStateContext)
-    const {addPokemonToPokedex} = useContext(GlobalStateContext)
+    const {pokemons, showDetails, addPokemonToPokedex} = useContext(GlobalStateContext)
+    
 
     const navigate = useNavigate()
     
@@ -24,7 +24,8 @@ const Home = () => {
             <div>
                 {pokemons && pokemons.map((poke) => {
                     return (
-                        <PokemonCard key={poke.name} poke={poke} addPokemonToPokedex={addPokemonToPokedex} />
+                        <PokemonCard key={poke.name} poke={poke} addPokemonToPokedex={addPokemonToPokedex}
+                        showDetails={showDetails} />
                     )
                 })}
                 

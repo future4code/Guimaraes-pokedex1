@@ -1,38 +1,47 @@
-import React from "react";
+import React, { useContext } from "react";
 import {useNavigate} from 'react-router-dom'
-
+import { ButtonDetails, HeaderDetails } from "./styles";
+import { goToHome, goToPokedex } from "../../routes/coordinator";
+import { GlobalStateContext } from "../../global/GlobalStateContext";
 
 
 
 
 const PokemonDetails = () => {
-     const navigate= useNavigate ()
- 
- 
- const goToPageHome= () => {
-  navigate ('/')
- }
+  const navigate= useNavigate ()
 
- const goToPagePokemon =() => {
-  navigate ('/pokedex')
+//   const showDetails = async (name) => {
+//     const response = await axios.get(`${BASE_URL}/${name}`)
+    
+
+// }
   
- }
- 
+
+
     return(
       <div>
-        <headerDetails>
+        <HeaderDetails>
             <p>PokemonDetails</p>
 
-              <buttonDetails>
-                <button onClick={goToPagePokemon}>Voltar</button>
-                <button onClick={goToPageHome}>Home</button>
+              <ButtonDetails>
+                <button onClick={() => goToPokedex(navigate)}>Voltar</button>
+                <button onClick={() => goToHome(navigate)}>Home</button>
                 <button>Adicionar</button>
                 <button>Remover</button>
-            </buttonDetails>  
+            </ButtonDetails>  
 
-        </headerDetails> 
+        </HeaderDetails> 
 
-     </div>
+      <div>
+        <div>
+
+        </div>
+
+      </div>
+
+
+
+      </div>
 
 
     )
