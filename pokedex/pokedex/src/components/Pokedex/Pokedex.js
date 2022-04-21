@@ -7,6 +7,7 @@ import PokemonCard from "../PokemonCard/PokemonCard";
 
 
 
+
 const Pokedex = () => {
 
     const navigate = useNavigate()
@@ -20,8 +21,7 @@ const Pokedex = () => {
         console.log(poke.name)
 
         return(
-          <p>{poke.name}</p>
-            
+            <PokemonCard key={poke.name} poke={poke} />
         )})
 
     return(
@@ -31,14 +31,7 @@ const Pokedex = () => {
                 <h1>POKEDEX</h1>
             </HeaderPokedex>
 
-            {/* <div> */}
-                {renderedPokemons}
-                {/* {pokemonsAdded && pokemonsAdded.map((poke) => {
-                return(
-                    <PokemonCard key={poke.name} poke={poke} />
-
-                )})} */}
-            {/* </div> */}
+            {renderedPokemons}
             
         </ContainerPokedex>
     )
