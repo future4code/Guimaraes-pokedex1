@@ -9,11 +9,13 @@ import { GlobalStateContext } from "../../global/GlobalStateContext";
 
 const Home = () => {
 
-    const {states, functions} = useContext(GlobalStateContext)
+    const {data} = useContext(GlobalStateContext)
 
-    const {pokemons} = states
+    const {pokemonsAdded} = data
 
-    const {addPokemonToPokedex} = functions
+    const {pokemons} = data
+
+    const {addPokemonToPokedex} = data
 
     const navigate = useNavigate()
 

@@ -11,12 +11,13 @@ const Pokedex = () => {
 
     const navigate = useNavigate()
 
-    const {pokemonsAdded} = useContext(GlobalStateContext)
+    const {data} = useContext(GlobalStateContext)
+
+    const {pokemonsAdded} = data
 
     console.log(pokemonsAdded)
 
     const renderedPokemons = pokemonsAdded && pokemonsAdded.map((poke) => {
-
         console.log(poke.name)
 
         return(
