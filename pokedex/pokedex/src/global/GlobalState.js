@@ -34,9 +34,9 @@ const GlobalState = (props) => {
     }
 
     const data = {pokemons, pokemonsAdded, addPokemonToPokedex}
-   
+
     return (
-        <GlobalStateContext.Provider value={data}>
+        <GlobalStateContext.Provider value={{data}}>
             {props.children}
         </GlobalStateContext.Provider>
     )
