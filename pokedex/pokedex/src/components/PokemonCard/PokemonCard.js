@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { goToPokemonDetails } from '../../routes/coordinator';
 import { ContainerButtons, ContainerCard, ImageCard } from './styles';
@@ -7,7 +7,6 @@ import { ContainerButtons, ContainerCard, ImageCard } from './styles';
 const PokemonCard = (props) => {
 
     const navigate = useNavigate()
-
 
     return (
         <ContainerCard>

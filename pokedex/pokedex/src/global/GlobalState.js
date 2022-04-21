@@ -24,8 +24,6 @@ const GlobalState = (props) => {
         getPokemons()
         console.log(pokemonsList)
     }, [])
-///
-
 
     const addPokemonToPokedex = (item) => {
         const newPokemonsAdded = [...pokemonsAdded]
@@ -35,11 +33,7 @@ const GlobalState = (props) => {
         console.log(pokemonsAdded)
     }
 
-    // console.log(pokemonsAdded)
-
     const data = {pokemons, pokemonsAdded, addPokemonToPokedex}
-    // const functions = {addPokemonToPokedex}
-
 
     return (
         <GlobalStateContext.Provider value={{data}}>
