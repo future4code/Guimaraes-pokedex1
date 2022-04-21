@@ -1,22 +1,16 @@
 import React, { useContext } from "react";
-import { GlobalStateContext } from "../../global/GlobalStateContext";
 import {useNavigate} from 'react-router-dom'
 import { ContainerPokedex, HeaderPokedex } from "./styles";
 import { goToHome } from "../../routes/coordinator";
 import PokemonCard from "../PokemonCard/PokemonCard";
-
-
-
+import { GlobalStateContext } from "../../global/GlobalStateContext";
 
 const Pokedex = () => {
 
+    const {pokemonsAdded} = useContext(GlobalStateContext)
+
     const navigate = useNavigate()
 
-    const {data} = useContext(GlobalStateContext)
-
-    const {pokemonsAdded} = data
-
-    console.log(pokemonsAdded)
 
     const renderedPokemons = pokemonsAdded && pokemonsAdded.map((poke) => {
         console.log(poke.name)

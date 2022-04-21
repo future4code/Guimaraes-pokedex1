@@ -10,15 +10,6 @@ const Home = () => {
 
     const {pokemons} = useContext(GlobalStateContext)
     const {addPokemonToPokedex} = useContext(GlobalStateContext)
-  
-    const {data} = useContext(GlobalStateContext)
-
-    const {pokemonsAdded} = data
-
-    const {pokemons} = data
-
-    const {addPokemonToPokedex} = data
-
 
     const navigate = useNavigate()
     
