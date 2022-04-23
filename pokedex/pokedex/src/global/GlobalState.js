@@ -7,13 +7,13 @@ import { goToPokemonDetails } from "../routes/coordinator";
 
 const GlobalState = (props) => {
 
-    // const navigate = useNavigate()
-
     const [pokemonsAdded, setPokemonsAdded] = useState([])
     const [pokemons, setPokemons] = useState([])
-    const [details, setDetails] = useState([])
+    const [details, setDetails] = useState()
+    const [choosedPokemon, setChoosedPokemon] = useState()
     const [removePokemon,setRemovePokemons] =useState ([])
     let pokemonsList = []
+
 
     useEffect(() => {
 
@@ -21,14 +21,11 @@ const GlobalState = (props) => {
             const response = await axios.get(`${BASE_URL}`);
             for (const pokemon of response.data.results) {
                 const response = await axios.get(pokemon.url)
-
                 pokemonsList.push(response.data)
             }
-
             setPokemons(pokemonsList)
         }
         getPokemons()
-        console.log(pokemonsList)
     }, [])
 
     const addPokemonToPokedex = (item) => {
@@ -39,22 +36,31 @@ const GlobalState = (props) => {
         console.log(pokemonsAdded)
     }
 
+
+    const showDetails = (item) => {
+        const newDetails = []
+        newDetails.push(item)
+        setDetails(item)
+        setChoosedPokemon(newDetails)
+    }
+
+
+    const clearDetails = () => {
+        setDetails(undefined)
+    }
+
     const toRemovePokemon = (item) => {
       const newRemovePokemon = [...pokemons]
       newRemovePokemon.splice(item)
       console.log (newRemovePokemon)
 
+
       setRemovePokemons(removePokemon)
 // plantão comentou filter.
-
     }
 
+    const data = {pokemons, pokemonsAdded, addPokemonToPokedex, details, clearDetails, showDetails, choosedPokemon, toRemovePokemon}
 
-
-
-
-
-    const data = {pokemons, pokemonsAdded, addPokemonToPokedex, details,toRemovePokemon}
 
     return (
         <GlobalStateContext.Provider value={data}>
