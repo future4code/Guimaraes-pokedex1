@@ -5,6 +5,7 @@ import { BASE_URL } from "../constants/urls";
 import { useNavigate } from 'react-router-dom'
 import { goToPokemonDetails } from "../routes/coordinator";
 
+
 const GlobalState = (props) => {
 
     const [pokemonsAdded, setPokemonsAdded] = useState([])
