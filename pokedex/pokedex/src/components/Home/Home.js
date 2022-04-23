@@ -2,8 +2,9 @@ import React, { useContext, useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom"
 import { goToHome, goToPokedex, goToPokemonDetails } from "../../routes/coordinator";
 import PokemonCard from "../PokemonCard/PokemonCard";
-import { ContainerHome, HeaderHome } from "./styles";
+import { ContainerHome, ContainerMain, HeaderHome } from "./styles";
 import { GlobalStateContext } from "../../global/GlobalStateContext";
+import imagem from '../../img/logo.png'
 
 
 const Home = () => {
@@ -24,21 +25,17 @@ const Home = () => {
             goToHome(navigate)
         }
     }
-
-
-
-
-
     
     return(
 
         <ContainerHome>
             <HeaderHome>
                 <button onClick={() => goToPokedex(navigate)}>Ver Pokedex</button>
-                <h1>Lista de Pokémons</h1>
+                <img src={imagem} />
+                <p> . </p>
             </HeaderHome>
 
-            <div>
+            <ContainerMain>
                 {pokemons && pokemons.map((poke) => {
                     return (
                         <PokemonCard key={poke.name} poke={poke} addPokemonToPokedex={addPokemonToPokedex}
@@ -46,7 +43,7 @@ const Home = () => {
                     )
                 })}
                 
-            </div>
+            </ContainerMain>
         </ContainerHome>
     )
 }
