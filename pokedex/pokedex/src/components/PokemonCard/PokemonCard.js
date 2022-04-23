@@ -18,6 +18,7 @@ const PokemonCard = (props) => {
             <ContainerButtons>
                 <button onClick={() => props.showDetails(props.poke)}>Ver Detalhes</button>
                 <button onClick={() => props.addPokemonToPokedex(props.poke)}>Adicionar a Pokedex</button>
+                <button onClick={() => props.toRemovePokemon(props.item)}>Remover da Pokedex</button>
             </ContainerButtons>
         </ContainerCard>
 

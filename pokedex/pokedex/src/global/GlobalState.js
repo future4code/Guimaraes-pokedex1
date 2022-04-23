@@ -11,6 +11,7 @@ const GlobalState = (props) => {
     const [pokemons, setPokemons] = useState([])
     const [details, setDetails] = useState()
     const [choosedPokemon, setChoosedPokemon] = useState()
+    const [removePokemon,setRemovePokemons] =useState ([])
     let pokemonsList = []
 
 
@@ -35,6 +36,7 @@ const GlobalState = (props) => {
         console.log(pokemonsAdded)
     }
 
+
     const showDetails = (item) => {
         const newDetails = []
         newDetails.push(item)
@@ -47,8 +49,18 @@ const GlobalState = (props) => {
         setDetails(undefined)
     }
 
+    const toRemovePokemon = (item) => {
+      const newRemovePokemon = [...pokemons]
+      newRemovePokemon.splice(item)
+      console.log (newRemovePokemon)
 
-    const data = {pokemons, pokemonsAdded, addPokemonToPokedex, details, clearDetails, showDetails, choosedPokemon}
+
+      setRemovePokemons(removePokemon)
+// plantão comentou filter.
+    }
+
+    const data = {pokemons, pokemonsAdded, addPokemonToPokedex, details, clearDetails, showDetails, choosedPokemon, toRemovePokemon}
+
 
     return (
         <GlobalStateContext.Provider value={data}>
