@@ -1,6 +1,6 @@
-import React, { useContext} from "react";
+import React, { useContext, useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom"
-import { goToPokedex } from "../../routes/coordinator";
+import { goToHome, goToPokedex, goToPokemonDetails } from "../../routes/coordinator";
 import PokemonCard from "../PokemonCard/PokemonCard";
 import { ContainerHome, HeaderHome } from "./styles";
 import { GlobalStateContext } from "../../global/GlobalStateContext";
@@ -8,10 +8,27 @@ import { GlobalStateContext } from "../../global/GlobalStateContext";
 
 const Home = () => {
 
-    const {pokemons, showDetails, addPokemonToPokedex} = useContext(GlobalStateContext)
+    const {pokemons, showDetails, addPokemonToPokedex, clearDetails, details} = useContext(GlobalStateContext)
     
-
     const navigate = useNavigate()
+
+    useEffect(() => {
+        verify()
+        clearDetails()
+    }, [details])
+
+    const verify = () => {
+        if (details != undefined) {
+            goToPokemonDetails(navigate)
+        } else {
+            goToHome(navigate)
+        }
+    }
+
+
+
+
+
     
     return(
 

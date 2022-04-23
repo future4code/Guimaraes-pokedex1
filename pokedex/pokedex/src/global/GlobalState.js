@@ -7,12 +7,12 @@ import { goToPokemonDetails } from "../routes/coordinator";
 
 const GlobalState = (props) => {
 
-    // const navigate = useNavigate()
-
     const [pokemonsAdded, setPokemonsAdded] = useState([])
     const [pokemons, setPokemons] = useState([])
-    const [details, setDetails] = useState([])
+    const [details, setDetails] = useState()
+    const [choosedPokemon, setChoosedPokemon] = useState()
     let pokemonsList = []
+
 
     useEffect(() => {
 
@@ -20,14 +20,11 @@ const GlobalState = (props) => {
             const response = await axios.get(`${BASE_URL}`);
             for (const pokemon of response.data.results) {
                 const response = await axios.get(pokemon.url)
-
                 pokemonsList.push(response.data)
             }
-
             setPokemons(pokemonsList)
         }
         getPokemons()
-        console.log(pokemonsList)
     }, [])
 
     const addPokemonToPokedex = (item) => {
@@ -38,9 +35,20 @@ const GlobalState = (props) => {
         console.log(pokemonsAdded)
     }
 
+    const showDetails = (item) => {
+        const newDetails = []
+        newDetails.push(item)
+        setDetails(item)
+        setChoosedPokemon(newDetails)
+    }
 
 
-    const data = {pokemons, pokemonsAdded, addPokemonToPokedex, details}
+    const clearDetails = () => {
+        setDetails(undefined)
+    }
+
+
+    const data = {pokemons, pokemonsAdded, addPokemonToPokedex, details, clearDetails, showDetails, choosedPokemon}
 
     return (
         <GlobalStateContext.Provider value={data}>

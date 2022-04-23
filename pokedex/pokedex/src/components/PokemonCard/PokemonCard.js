@@ -16,7 +16,7 @@ const PokemonCard = (props) => {
         <ContainerCard>
             <ImageCard src={props.poke.sprites.front_default}/>
             <ContainerButtons>
-                <button onClick={() => goToPokemonDetails(navigate, )}>Ver Detalhes</button>
+                <button onClick={() => props.showDetails(props.poke)}>Ver Detalhes</button>
                 <button onClick={() => props.addPokemonToPokedex(props.poke)}>Adicionar a Pokedex</button>
             </ContainerButtons>
         </ContainerCard>
