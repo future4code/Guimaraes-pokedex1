@@ -96,12 +96,16 @@ border-radius: 15px;
 padding-left: 15px;
 height: 320px;
 justify-content: center;
+color:#ffffff;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 
 p {
     margin-bottom: 10px;
     margin-top: 10px;
-    font-size: larger;
+    /* font-size: larger; */
 }
+
 `
 
 export const TypesAndAttacks = styled.div`
@@ -109,10 +113,13 @@ display: flex;
 flex-direction: column;
 height: 450px;
 justify-content: center;
+
 `
 
-export const Types = styled.div`
+export const ContainerType = styled.div `
 display: flex;
+flex-direction: column;
+color: #ffffff;
 background-color: #D10101;
 justify-content: space-around;
 margin-bottom: 20px;
@@ -120,7 +127,17 @@ border: #fefefe 2px solid;
 border-radius: 15px;
 height: 60px;
 align-items: center;
-font-size: larger;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+`
+
+
+export const Types = styled.div`
+display: flex;
+justify-content: space-between;
+width: 80%;
+
 `
 
 export const Attacks = styled.div`
@@ -133,5 +150,9 @@ border-radius: 15px;
 padding-left: 15px;
 height: 320px;
 justify-content: center;
-font-size: larger;
+color:#ffffff;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+gap: 25px;
+
 `
+
