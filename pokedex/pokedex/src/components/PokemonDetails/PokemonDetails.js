@@ -14,7 +14,6 @@ const PokemonDetails = () => {
     clearDetails()
   }, [])
 
-
     return(
       <Page>
         <div>

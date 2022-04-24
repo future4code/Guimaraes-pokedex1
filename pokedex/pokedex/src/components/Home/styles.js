@@ -10,9 +10,13 @@ export const HeaderHome = styled.header `
     align-items: center;
     border-bottom: 2px solid #ffffff ;
     height: 120px;
-    margin-bottom: 40px;
+    margin-bottom: 6vh;
 
-    img {
+    div {
+        margin-right:11% ;
+    }
+
+    div img {
         height: 100px;
     }
 
@@ -25,7 +29,7 @@ export const HeaderHome = styled.header `
         font-weight: bold;
         padding: 10px;
         border-radius: 15px;
-        margin-left: 60px;
+        margin-left: 6vw;
     }
 `
 

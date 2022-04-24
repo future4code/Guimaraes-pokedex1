@@ -27,6 +27,7 @@ export const ContainerButtons = styled.div `
     width: 100%;
     margin-bottom: 40px;
     align-self: center;
+    justify-content: center;
   
     button {
         background-color: #000000;
@@ -39,3 +40,4 @@ export const ContainerButtons = styled.div `
         border-radius: 15px;
     }
 `
+

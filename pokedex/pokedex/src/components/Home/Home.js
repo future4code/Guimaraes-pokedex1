@@ -31,10 +31,11 @@ const Home = () => {
         <ContainerHome>
             <HeaderHome>
                 <button onClick={() => goToPokedex(navigate)}>Ver Pokedex</button>
-                <img src={imagem} />
+                <div>
+                    <img src={imagem} />
+                </div>
                 <p> . </p>
-            </HeaderHome>
-
+            </HeaderHome>00002
             <ContainerMain>
                 {pokemons && pokemons.map((poke) => {
                     return (

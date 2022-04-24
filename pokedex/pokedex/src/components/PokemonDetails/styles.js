@@ -14,24 +14,23 @@ export const Header = styled.header `
     align-items: center;
     border-bottom: 2px solid #ffffff ;
     height: 120px;
-    margin-bottom: 40px;
+    margin-bottom: 6vh;
 
 
-    div {
+    div:nth-child(1) {
         display: flex;
-        width: 40%;
+        width: 20%;
     }
 
     div:nth-child(2) {
         align-self: center;
         justify-self: center;
-
+        margin-right: 30vw;
+        margin-left: 21vw;
         img {
         height: 100px;
         }
     }
-
-
 
     button {
         background-color: #d10101;
@@ -42,7 +41,7 @@ export const Header = styled.header `
         font-weight: bold;
         padding: 10px;
         border-radius: 15px;
-        margin-left: 60px;
+        margin-left: 6vw;
     }
 `
 
