@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import react from 'react'
 
-export const Page = styled.body`
+export const Page = styled.div`
 background-color: black;
 height: 100vh;
 width: 100vw;

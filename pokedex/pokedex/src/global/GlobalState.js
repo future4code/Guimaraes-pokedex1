@@ -33,10 +33,11 @@ const GlobalState = (props) => {
         const newPokemonsAdded = [...pokemonsAdded]
         newPokemonsAdded.push(item)
         setPokemonsAdded(newPokemonsAdded)
-        console.log(newPokemonsAdded)
-        console.log(pokemonsAdded)
+        const pokemons2 = [...pokemons]
+        const callback = pokemons2.findIndex((poke) => item.name === poke.name)
+        pokemons2.splice(callback, 1)
+        setPokemons(pokemons2)
     }
-
 
     const showDetails = (item) => {
         const newDetails = []
@@ -45,23 +46,26 @@ const GlobalState = (props) => {
         setChoosedPokemon(newDetails)
     }
 
-
     const clearDetails = () => {
         setDetails(undefined)
     }
 
     const toRemovePokemon = (item) => {
-      const newRemovePokemon = [...pokemons]
-      newRemovePokemon.splice(item)
-      console.log (newRemovePokemon)
-
-
-      setRemovePokemons(removePokemon)
+    const newRemovePokemon = [...pokemonsAdded]
+    const callback = newRemovePokemon.findIndex((poke) => poke.name == item.name)
+    newRemovePokemon.splice(callback, 1)
+    setPokemonsAdded(newRemovePokemon)
+    const pokemons3 = [...pokemons]
+    pokemons3.push(item)
+    const organize = pokemons3.sort((a, b) => a.id - b.id)
+    console.log(organize)
+    setPokemons(organize)
+    
+    // setRemovePokemons(removePokemon)
 // plantão comentou filter.
     }
 
     const data = {pokemons, pokemonsAdded, addPokemonToPokedex, details, clearDetails, showDetails, choosedPokemon, toRemovePokemon}
-
 
     return (
         <GlobalStateContext.Provider value={data}>
