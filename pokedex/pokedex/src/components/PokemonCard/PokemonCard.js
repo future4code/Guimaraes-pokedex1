@@ -7,17 +7,6 @@ import { ContainerButtons, ContainerCard, ImageCard, ImageContainer } from './st
 const PokemonCard = (props) => {
 
     const navigate = useNavigate()
-    const ifPokedex = () => {
-        return(
-            <button onClick={() => props.toRemovePokemon(props.item)}>Remover da Pokedex</button>
-        )
-    }
-
-    const notPokedex = () => {
-        return(
-            <button onClick={() => props.addPokemonToPokedex(props.poke)}>Adicionar a Pokedex</button>
-        )
-    }
 
     return (
         <ContainerCard>
@@ -26,7 +15,7 @@ const PokemonCard = (props) => {
             </ImageContainer>
             <ContainerButtons>
                 <button onClick={() => props.showDetails(props.poke)}>Ver Detalhes</button>
-                {props.isPokedex ? ifPokedex() : notPokedex()}
+                {props.isPokedex ? <button onClick={() => props.toRemovePokemon(props.poke)}>Remover da Pokedex</button> : <button onClick={() => props.addPokemonToPokedex(props.poke)}>Adicionar a Pokedex</button>}
             </ContainerButtons>
         </ContainerCard>
     )

@@ -27,7 +27,6 @@ const Home = () => {
     }
     
     return(
-
         <ContainerHome>
             <HeaderHome>
                 <button onClick={() => goToPokedex(navigate)}>Ver Pokedex</button>
@@ -35,7 +34,7 @@ const Home = () => {
                     <img src={imagem} />
                 </div>
                 <p> . </p>
-            </HeaderHome>00002
+            </HeaderHome>
             <ContainerMain>
                 {pokemons && pokemons.map((poke) => {
                     return (
