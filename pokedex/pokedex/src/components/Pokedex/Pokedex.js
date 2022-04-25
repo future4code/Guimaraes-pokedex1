@@ -4,7 +4,7 @@ import { ContainerPokedex, HeaderPokedex, Cards } from "./styles";
 import { goToHome, goToPokedex, goToPokemonDetails } from "../../routes/coordinator";
 import PokemonCard from "../PokemonCard/PokemonCard";
 import { GlobalStateContext } from "../../global/GlobalStateContext";
-import imagem from '../../img/Pokédex_logo.png'
+import imagem from '../../img/logo.png'
 
 const Pokedex = () => {
 
@@ -25,8 +25,6 @@ const Pokedex = () => {
         }
     }
 
-
-
     const renderedPokemons = pokemonsAdded && pokemonsAdded.map((poke) => {
         return(
             <PokemonCard isPokedex key={poke.name} poke={poke} toRemovePokemon={toRemovePokemon} showDetails={showDetails} />
@@ -35,13 +33,11 @@ const Pokedex = () => {
     return(
         <ContainerPokedex>
             <HeaderPokedex>
-                <div>
-                    <button onClick={() => goToHome(navigate)}>VOLTAR PRA HOME</button>
-                </div>
-                <div>
-                    <img src={imagem}></img>
-                </div>
+                    <button onClick={() => goToHome(navigate)}>Voltar</button>
+                    <img src={imagem} />
+                    <div> . </div>
             </HeaderPokedex>
+
             <Cards>
                 {renderedPokemons}
             </Cards>

@@ -41,8 +41,7 @@ const Home = () => {
                         <PokemonCard key={poke.name} poke={poke} addPokemonToPokedex={addPokemonToPokedex}
                         showDetails={showDetails} />
                     )
-                })}
-                
+                })}                
             </ContainerMain>
         </ContainerHome>
     )

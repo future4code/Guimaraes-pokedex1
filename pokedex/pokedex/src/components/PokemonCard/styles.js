@@ -3,9 +3,9 @@ import styled from 'styled-components';
 export const ContainerCard = styled.div `
     display: grid;
     grid-template-rows: 80% 20%;
-    height: 45vh;
+    height: 25vw;
     width: 25vw;
-    margin: 20px;
+    margin: 2vw;
     border: 2px solid #ffffff ;
     border-radius: 2vw;
     background-image: linear-gradient(#F05644, #D10101, #991400 );
@@ -17,27 +17,27 @@ export const ImageContainer = styled.div`
 `;
 
 export const ImageCard = styled.img`
-    height: 80%;
-    /* border: 1px solid; */
+    height: 15vw;
 `
 
 export const ContainerButtons = styled.div `
-    /* border: 1px solid; */
     display: flex;
-    width: 100%;
-    margin-bottom: 40px;
+    width: 80%;
+    margin-bottom: 5vw;
     align-self: center;
-    justify-content: center;
+    justify-self: center;
+    justify-content: space-between;
   
     button {
         background-color: #000000;
-        min-height: 10vh;
-        min-width: 8vw;
+        height: 5vw;
+        width: 8vw;
         color: #ffffff ;
         border-color: #ffffff;
+        font-size: 1vw;
         font-weight: bold;
-        padding: 10px;
-        border-radius: 15px;
+        padding: 1vw;
+        border-radius: 1vw;
     }
 `
 

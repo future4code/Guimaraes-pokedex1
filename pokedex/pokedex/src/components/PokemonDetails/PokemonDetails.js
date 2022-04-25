@@ -16,19 +16,15 @@ const PokemonDetails = () => {
 
       return(
         <Page>
-          <div>
            <Header>
                   <div>
                     <button onClick={() => goToPokedex(navigate)}>Pokedex</button>
                     <button onClick={() => goToHome(navigate)}>Home</button>
                   </div>
-
-                   <div>
-                    <img src={imagem}></img>
-                   </div>
+                  <img src={imagem} />
+                  <div> . </div>                   
            </Header> 
 
-            <div>
               {choosedPokemon && choosedPokemon.map((poke) => {
                  return(
                   <ContainerDetails>
@@ -75,10 +71,9 @@ const PokemonDetails = () => {
                         </Attacks>
                     </TypesAndAttacks>
                   </ContainerDetails>
-        )
-      })}
-            </div>
-          </div>
+          )
+        })}
+          
         </Page>
 
 
