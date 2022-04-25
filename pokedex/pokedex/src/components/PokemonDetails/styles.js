@@ -1,158 +1,142 @@
 import styled from 'styled-components'
-import react from 'react'
 
 export const Page = styled.div`
-background-color: black;
-height: 100vh;
-width: 100vw;
-margin: 0px;
-padding: 0%;
+    background-color: #000000;
+    height: 100%;
+    width: 100%;
 `
 
 export const Header = styled.header `
     display: flex;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #ffffff ;
-    height: 120px;
-    margin-bottom: 6vh;
+    height: 10vw;
+    margin-bottom: 3vw;
 
-
-    div:nth-child(1) {
-        display: flex;
-        width: 20%;
+    img {
+        height: 8vw;
+        margin-right: 25vw;
     }
-
-    div:nth-child(2) {
-        align-self: center;
-        justify-self: center;
-        margin-right: 30vw;
-        margin-left: 21vw;
-        img {
-        height: 100px;
-        }
-    }
+   
 
     button {
         background-color: #d10101;
-        min-height: 10vh;
+        min-height: 5vw;
         min-width: 8vw;
         color: #ffffff ;
         border-color: #ffffff;
         font-weight: bold;
-        padding: 10px;
-        border-radius: 15px;
-        margin-left: 6vw;
+        border-radius: 1vw;
+        margin-left: 4.5vw;
+        font-size: 1vw;
     }
 `
 
 export const PokemonPics = styled.div`
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-img {
-    width:200px;
-    background-color: #D10101;
-    margin:10px;
-    border: #fefefe 2px solid; 
-    border-radius: 15px;
-}
+    img {
+        width: 15vw;
+        background-color: #D10101;
+        margin: 1vw;
+        border: #fefefe 2px solid; 
+        border-radius: 1vw;
+    }
 `
 
 export const ContainerDetails = styled.div`
-display: flex;
-justify-content: space-around;
-align-items: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
 `
 
 export const NameAndStats = styled.div`
-display: flex;
-flex-direction: column;
-height: 450px;
-justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 30vw;
+    justify-content: center;
 `
 
 export const Names = styled.div`
-color: #ffffff;
-justify-content: center;
-background-color: #D10101;
-border: #fefefe 2px solid; 
-border-radius: 15px;
-margin-bottom: 20px;
-text-align: center;
-font-size: 30px;
-font-family: fantasy;
-height: 70px;
-display: flex;
-align-items: center;
+    color: #ffffff;
+    justify-content: center;
+    background-color: #D10101;
+    border: #fefefe 2px solid; 
+    border-radius: 1vw;
+    margin-bottom: 2vw;
+    text-align: center;
+    font-size: 2.5vw;
+    font-family: fantasy;
+    height: 6vw;
+    display: flex;
+    align-items: center;
 `
 
 export const Stats = styled.div`
-display: flex;
-flex-direction: column;
-background-color: #D10101;
-width: 200px;
-border: #fefefe 2px solid; 
-border-radius: 15px;
-padding-left: 15px;
-height: 320px;
-justify-content: center;
-color:#ffffff;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #D10101;
+    width: 15vw;
+    border: #fefefe 2px solid; 
+    border-radius: 1vw;
+    padding-left: 1vw;
+    height: 30vw;
+    justify-content: center;
+    color:#ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2vw;
 
 
-p {
-    margin-bottom: 10px;
-    margin-top: 10px;
-    /* font-size: larger; */
-}
+    p {
+        margin: .8vw 0;
+    }
 
 `
 
 export const TypesAndAttacks = styled.div`
-display: flex;
-flex-direction: column;
-height: 450px;
-justify-content: center;
-
+    display: flex;
+    flex-direction: column;
+    height: 30vw;
+    justify-content: center;
+    font-size: 1.2vw;
 `
 
 export const ContainerType = styled.div `
-display: flex;
-flex-direction: column;
-color: #ffffff;
-background-color: #D10101;
-justify-content: space-around;
-margin-bottom: 20px;
-border: #fefefe 2px solid; 
-border-radius: 15px;
-height: 60px;
-align-items: center;
-font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    background-color: #D10101;
+    justify-content: space-around;
+    margin-bottom: 2vw;
+    border: #fefefe 2px solid; 
+    border-radius: 1vw;
+    height: 5vw;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 `
 
 
 export const Types = styled.div`
-display: flex;
-justify-content: space-between;
-width: 80%;
-
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
 `
 
 export const Attacks = styled.div`
-display: flex;
-flex-direction: column;
-background-color: #D10101;
-width: 200px;
-border: #fefefe 2px solid; 
-border-radius: 15px;
-padding-left: 15px;
-height: 320px;
-justify-content: center;
-color:#ffffff;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-gap: 25px;
-
+    display: flex;
+    flex-direction: column;
+    background-color: #D10101;
+    width: 15vw;
+    border: #fefefe 2px solid; 
+    border-radius: 1vw;
+    padding-left: 1vw;
+    height: 25vw;
+    justify-content: center;
+    color:#ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    gap: 2vw;
 `
 
