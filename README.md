@@ -35,6 +35,6 @@ Foram utilizadas no projeto as seguintes tecnologias e ferramentas:
  <a href="https://icky-horn.surge.sh/">Projeto Pokedex</a>
  
  <h2>Imagens do site</h2>
-![image](https://user-images.githubusercontent.com/93088559/165167677-d78757e5-968d-4028-b501-78849ce0859c.png)
-![image](https://user-images.githubusercontent.com/93088559/165167697-67dde134-c79f-4771-afcf-3bce14ab9be4.png)
+<img src=(https://user-images.githubusercontent.com/93088559/165167677-d78757e5-968d-4028-b501-78849ce0859c.png)/>
+<img src=(https://user-images.githubusercontent.com/93088559/165167697-67dde134-c79f-4771-afcf-3bce14ab9be4.png)/>
 
